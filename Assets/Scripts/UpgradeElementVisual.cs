@@ -9,7 +9,7 @@ public class UpgradeElementVisual : MonoBehaviour
     [SerializeField] private Button btnUpgrade;
     [SerializeField] private Image imgIcon;
 
-    private float currentCost = 0;
+    private UpgradeElement upg;
     
     void Start()
     {
@@ -18,7 +18,7 @@ public class UpgradeElementVisual : MonoBehaviour
 
     public void Initialize(UpgradeElement upgrade)
     {
-        currentCost = upgrade.currentCost;
+        upg = upgrade;
         labelName.text = upgrade.name;
         labelCost.text = "$" + upgrade.currentCost.ToString(); 
         imgIcon.sprite = upgrade.icon;
@@ -26,10 +26,10 @@ public class UpgradeElementVisual : MonoBehaviour
 
     private void UpgradeClicked()
     {
-        currentCost = currentCost * 5;
+        upg.currentCost = (upg.currentCost * upg.costMultiplier) + upg.addAmt;
         
-        GameManager.Instance.UpdateUpgradeCost(labelName.text, currentCost);        
-        labelCost.text = "$" + currentCost.ToString();
+        GameManager.Instance.UpdateUpgradeCost(labelName.text, upg.currentCost);        
+        labelCost.text = "$" + upg.currentCost.ToString();
     }
     
     

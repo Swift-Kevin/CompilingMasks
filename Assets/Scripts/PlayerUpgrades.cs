@@ -8,6 +8,7 @@ public struct UpgradeElement
     public string name;
     public float currentCost;
     public float costMultiplier;
+    public float addAmt;
     public Sprite icon;
 }
 
