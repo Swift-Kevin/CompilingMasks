@@ -449,6 +449,7 @@ MonoBehaviour:
   labelName: {fileID: 4374265421348452235}
   labelCost: {fileID: 4856257186833388928}
   btnUpgrade: {fileID: 6007914037653329717}
+  imgIcon: {fileID: 406646841919227953}
 --- !u!1 &9162812083675355713
 GameObject:
   m_ObjectHideFlags: 0

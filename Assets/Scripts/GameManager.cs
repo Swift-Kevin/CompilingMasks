@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
+    [SerializeField] private PlayerUpgrades upgradesStorage;
 
     public void Awake()
     {
-        instance = this;
+        Instance = this;
     }
-    
-    void Start()
+
+    public void UpdateUpgradeCost(string _key, float _value)
     {
+        upgradesStorage.UpdateUpgradeCost(_key, _value);
     }
 
     void Update()
