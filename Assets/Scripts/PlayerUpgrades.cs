@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-struct UpgradeElement
+public struct UpgradeElement
 {
     public string name;
     public float currentCost;
@@ -12,17 +12,24 @@ struct UpgradeElement
 
 public class PlayerUpgrades : MonoBehaviour
 {
-    [SerializeField] List<UpgradeElement> upgrades;
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject upgradeElementPrefab;
+    [SerializeField] private List<UpgradeElement> upgrades;
+    public List<UpgradeElement> Upgrades => upgrades;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Transform upgradeMenuSlotParent;
+
+    public void Start()
     {
-        
+        IntializeUpgrades();
     }
+    
+    public void IntializeUpgrades()
+    {
+        for (int i = 0; i < upgrades.Count; i++)
+        {
+            GameObject obj = Instantiate(upgradeElementPrefab, upgradeMenuSlotParent);
+            
+        }
+    }
+    
 }
