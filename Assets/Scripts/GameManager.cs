@@ -14,9 +14,4 @@ public class GameManager : MonoBehaviour
     {
         upgradesStorage.UpdateUpgradeCost(_key, _value);
     }
-
-    void Update()
-    {
-        
-    }
 }
