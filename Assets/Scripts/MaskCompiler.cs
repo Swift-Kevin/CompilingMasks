@@ -23,7 +23,6 @@ public class MaskCompiler : MonoBehaviour
     void Update()
     {
         compileElapsed += (Time.deltaTime * GameManager.Instance.GetSimulationMultiplier());
-        Debug.Log(GameManager.Instance.GetSimulationMultiplier());
         
         compilationSlider.value = compileElapsed;
 
@@ -62,6 +61,7 @@ public class MaskCompiler : MonoBehaviour
         compilationSlider.value = 0f;
 
         maskFilter.mesh = currentMask.model;
-        maskRenderer.sharedMaterial = currentMask.mat;
+        maskRenderer.material = new Material(currentMask.mat);
+        maskObjFeedback.BindMaterial();
     }
 }

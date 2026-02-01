@@ -25,8 +25,14 @@ public class MaskUXFeedback : MonoBehaviour
         transform.Rotate(0, rotateSpeed, 0);
     }
 
-    public void UpdateDissolve(float _amt)
+    public void BindMaterial()
     {
-        dissolveMat.SetFloat("_CutoffHeight", _amt);
+        dissolveMat = rend.material;
+    }
+
+    public void UpdateDissolve(float amt)
+    {
+        if (dissolveMat != null)
+            dissolveMat.SetFloat("_CutoffHeight", amt);
     }
 }

@@ -398,14 +398,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -665,9 +665,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1693415158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -75, y: -75}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286361459
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 497868631}
   m_OnClick:
     m_PersistentCalls:
@@ -1540,9 +1540,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradesStorage: {fileID: 153871228}
   currencyResource:
-    curValue: 1
+    curValue: 0
   maskCompScript: {fileID: 1296484233}
-  StartingCurrencyAmt: 2500
+  StartingCurrencyAmt: 0
 --- !u!4 &1296484232
 Transform:
   m_ObjectHideFlags: 0
@@ -1590,25 +1590,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maskEntries:
-  - name: Common Mask Example
+  - name: Common Kabuki
     compilationTime: 20
     rewardPrice: 50
     rarity: 0
     model: {fileID: 7332536660342605246, guid: a59058ee6cf78a3e9b4958c4685ed05e, type: 3}
     mat: {fileID: 2100000, guid: 5bb1f0e9c657f14cd9e325bc4a576671, type: 2}
-  - name: Uncommon Mask Example
+  - name: Uncommon Kabuki
     compilationTime: 30
     rewardPrice: 250
     rarity: 1
     model: {fileID: 7332536660342605246, guid: a59058ee6cf78a3e9b4958c4685ed05e, type: 3}
     mat: {fileID: 2100000, guid: f569c9bed449eae72a7ccfe71992f6d1, type: 2}
-  - name: Rare Mask Example
+  - name: Rare Kabuki
     compilationTime: 60
     rewardPrice: 644
     rarity: 2
     model: {fileID: 7332536660342605246, guid: a59058ee6cf78a3e9b4958c4685ed05e, type: 3}
     mat: {fileID: 2100000, guid: 5401a327a0f0c1117a29191b084f9f59, type: 2}
-  - name: Epic Mask Example
+  - name: Epic Kabuki
     compilationTime: 120
     rewardPrice: 1420
     rarity: 3
@@ -2315,8 +2315,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -365, y: -297.23}
-  m_SizeDelta: {x: 196.778, y: 244.4677}
+  m_AnchoredPosition: {x: -391, y: -286}
+  m_SizeDelta: {x: 298.7833, y: 200.9053}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1695824774
 GameObject:
@@ -2553,7 +2553,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1923937740
 RectTransform:
   m_ObjectHideFlags: 0
