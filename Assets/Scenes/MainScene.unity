@@ -499,7 +499,7 @@ MonoBehaviour:
   upgradeMenuSlotParent: {fileID: 1285357699}
   upgrades:
   - name: CPU
-    icon: {fileID: 8309096688390797820, guid: a37523e4851663d9aa11650c4d1532f6, type: 3}
+    icon: {fileID: 1011452270, guid: 7f20d6990ac2bad46b29172844ea01d9, type: 3}
     upgradeCost: 50
     upgradeCostMultiplier: 1.02
     upgradeCostAdditional: 42
@@ -507,7 +507,7 @@ MonoBehaviour:
     upgradeResourceMultiplier: 1.02
     upgradeResourceAdditional: 0.0004705
   - name: GPU
-    icon: {fileID: 21300000, guid: ea4ebe195025ff3c6b23563373ba2566, type: 3}
+    icon: {fileID: 267901444, guid: 7f20d6990ac2bad46b29172844ea01d9, type: 3}
     upgradeCost: 200
     upgradeCostMultiplier: 1.02
     upgradeCostAdditional: 50
@@ -515,7 +515,7 @@ MonoBehaviour:
     upgradeResourceMultiplier: 1.02
     upgradeResourceAdditional: 0.0011
   - name: Enrichment
-    icon: {fileID: 21300000, guid: 0af4fadc4724558fe92e877309d7e862, type: 3}
+    icon: {fileID: -1767280808, guid: 8af8de64f1adf244f8640a8b26cea033, type: 3}
     upgradeCost: 500
     upgradeCostMultiplier: 1.02
     upgradeCostAdditional: 40
@@ -690,7 +690,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0af4fadc4724558fe92e877309d7e862, type: 3}
+  m_Sprite: {fileID: 1190298625, guid: bf70da30d03be3d4eb67955fc6c5a2fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1014,7 +1014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 61.06, y: 55}
+  m_AnchoredPosition: {x: 61.06006, y: 55}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
@@ -1898,7 +1898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 61.059998, y: 161}
+  m_AnchoredPosition: {x: 61.06006, y: 161}
   m_SizeDelta: {x: 99, y: 81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1508869884 stripped
