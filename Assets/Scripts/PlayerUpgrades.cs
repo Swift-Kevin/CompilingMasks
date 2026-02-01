@@ -46,33 +46,64 @@ public class PlayerUpgrades : MonoBehaviour
 
         GameManager.Instance.CurrencyResource.OnChanged += ValidateUpgradePurchaseable;
     }
+
+    public void OnDestry()
+    {
+        GameManager.Instance.CurrencyResource.OnChanged -= ValidateUpgradePurchaseable;
+    }
     
     public void IntializeUpgrades()
     {
-        foreach (KeyValuePair<string, UpgradeElement> ele in upgradesDB)
+        foreach (var kvp in upgradesDB)
         {
+            string key = kvp.Key;
+
             UpgradeElementVisual obj = Instantiate(upgradeElementPrefab, upgradeMenuSlotParent).GetComponent<UpgradeElementVisual>();
-            obj.Initialize(ele.Value); 
+
+            obj.Initialize(kvp.Value);
+            obj.ButtonUpgrade.onClick.AddListener(() => GameManager.Instance.BuyUpgrade(key));
+
             upgradeOBJs.Add(obj);
         }
     }
     
-    public void UpdateUpgradeCost(string _key, float _value)
+    public void ApplyUpgrade(string key)
     {
-        if (upgradesDB.ContainsKey(_key))
-        {
-            UpgradeElement ele = upgradesDB[_key]; 
-            ele.upgradeCost = _value;
-            upgradesDB[_key] = ele;
-        }
+        if (!upgradesDB.ContainsKey(key))
+            return;
+
+        UpgradeElement ele = upgradesDB[key];
+
+        if (!GameManager.Instance.CurrencyResource.Spend(ele.upgradeCost))
+            return;
+
+        ele.upgradeResource = ele.upgradeResource * ele.upgradeResourceMultiplier + ele.upgradeResourceAdditional;
+        ele.upgradeCost = ele.upgradeCost * ele.upgradeCostMultiplier + ele.upgradeCostAdditional;
+
+        upgradesDB[key] = ele;
+    }
+    
+    public void BuyUpgrade(string key)
+    {
+        if (!upgradesDB.ContainsKey(key))
+            return;
+
+        UpgradeElement ele = upgradesDB[key];
+
+        if (!GameManager.Instance.CurrencyResource.Spend(ele.upgradeCost))
+            return;
+
+        ele.upgradeResource = ele.upgradeResource * ele.upgradeResourceMultiplier + ele.upgradeResourceAdditional;
+        ele.upgradeCost = ele.upgradeCost * ele.upgradeCostMultiplier + ele.upgradeCostAdditional;
+
+        upgradesDB[key] = ele;
     }
 
     public void ValidateUpgradePurchaseable(float oldValue, float newValue)
     {
         for (int i = 0; i < upgradeOBJs.Count; i++)
         {
-            bool enableBTN = newValue > upgradeOBJs[i].UpgradeCost;
-            upgradeOBJs[i].ButtonUpgrade.enabled = enableBTN;
+            upgradeOBJs[i].ButtonUpgrade.interactable = newValue >= upgradeOBJs[i].UpgradeCost;
         }
     }
     

@@ -14,6 +14,7 @@ public class Resource
     public void Initialize(float startValue = 0f)
     {
         curValue = Mathf.Max(0f, startValue);
+        OnChanged?.Invoke(0, curValue);
     }
 
     public void Increase(float amount)
