@@ -17,6 +17,7 @@ public struct MaskEntry
     public float rewardPrice;
     public MaskRarity rarity;
     public Mesh model;
+    public Material mat;
 }
     
 public class MaskDatabase : MonoBehaviour

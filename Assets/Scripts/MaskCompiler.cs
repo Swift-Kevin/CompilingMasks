@@ -23,11 +23,12 @@ public class MaskCompiler : MonoBehaviour
     void Update()
     {
         compileElapsed += (Time.deltaTime * GameManager.Instance.GetSimulationMultiplier());
- 
+        Debug.Log(GameManager.Instance.GetSimulationMultiplier());
+        
         compilationSlider.value = compileElapsed;
 
         float percent = Mathf.Clamp01(compileElapsed / maxCompileTime) * 100f;
-        labelCompPercent.text = percent.ToString("F2") + "%";
+        labelCompPercent.text = percent.ToString("F0") + "%";
 
         if (compileElapsed >= maxCompileTime)
         {
@@ -61,5 +62,6 @@ public class MaskCompiler : MonoBehaviour
         compilationSlider.value = 0f;
 
         maskFilter.mesh = currentMask.model;
+        maskRenderer.sharedMaterial = currentMask.mat;
     }
 }
