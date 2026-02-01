@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +31,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite sprUpgradeOriginal;
     [SerializeField] private Sprite sprClose;
 
+    [Header("Currency")]
+    [SerializeField] private TextMeshProUGUI labelCurrencyValue;
+    
     MenuID currentMenu = MenuID.Gameplay;
     
     public void Awake()
@@ -87,5 +91,15 @@ public class UIManager : MonoBehaviour
         menuGameplay.SetActive(false);
         menuSettings.SetActive(false);
         menuUpgrade.SetActive(false);
+    }
+
+    public void UpdateCurrencyLabel(float _amt)
+    {
+        labelCurrencyValue.text = "$" + _amt.ToString();
+    }
+
+    public void UpdateUpgradesPurchaseable()
+    {
+        
     }
 }
